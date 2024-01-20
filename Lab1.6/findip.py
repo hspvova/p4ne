@@ -4,11 +4,11 @@ from ipaddress import IPv4Interface
 
 
 def find_ip(string):
-    ip_plus_netmask = re.findall(r"((?:(?:[0-9]{1,3})(?:\.?|$)){4})", string)
+    ip_plus_netmask = re.findall(r"((?:(?:25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{2}|[0-9])(?:\.?|$)){4})", string)
     res = 0
     if len(ip_plus_netmask) == 2:
         ip_addr = ip_plus_netmask[0]+'/'+ip_plus_netmask[1]
-        res = IPv4Interface((ip_addr))
+        res = IPv4Interface(ip_addr)
     return res
 
 
