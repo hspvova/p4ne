@@ -22,7 +22,7 @@ for filename in glob.glob(r"..\..\..\config_files\*.log"):
     with (open(filename) as fil):
         for string in fil:
             tango = find_ip(string.strip())
-            if tango is not None:
+            if tango:
                 result.append(tango)
 
 s_old = ""
