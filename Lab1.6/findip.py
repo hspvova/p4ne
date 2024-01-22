@@ -2,6 +2,7 @@ import glob
 import re
 from ipaddress import IPv4Interface
 
+FILES_FOLDER = r"..\..\..\config_files\*.log"
 
 def find_ip(string):
     if "ip address" in string:
@@ -18,7 +19,7 @@ def find_ip(string):
 
 result = []
 
-for filename in glob.glob(r"..\..\..\config_files\*.log"):
+for filename in glob.glob(FILES_FOLDER):
     with (open(filename) as fil):
         for string in fil:
             tango = find_ip(string.strip())
