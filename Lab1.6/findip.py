@@ -15,7 +15,7 @@ def find_ip(string):
 
 result = []
 
-for filename in glob.glob(r"..\..\config_files\*.log"):
+for filename in glob.glob(r"..\..\..\config_files\*.log"):
     with (open(filename) as fil):
         for string in fil:
             tango = find_ip(string.strip())
