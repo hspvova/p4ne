@@ -4,6 +4,7 @@ from ipaddress import IPv4Interface
 
 FILES_FOLDER = r"..\..\..\config_files\*.log"
 
+
 def find_ip(string):
     if "ip address" in string:
         ip_plus_netmask = re.findall(
@@ -14,7 +15,7 @@ def find_ip(string):
             ip_addr = ip_plus_netmask[0]+'/'+ip_plus_netmask[1]
             res = IPv4Interface(ip_addr)
             return res
-    return
+    return None
 
 
 result = []
@@ -26,5 +27,7 @@ for filename in glob.glob(FILES_FOLDER):
             if tango:
                 result.append(tango)
 
-for s in set(result):
+
+
+for s in result:
     print(s)
