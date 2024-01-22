@@ -5,7 +5,10 @@ from ipaddress import IPv4Interface
 
 def find_ip(string):
     if "ip address" in string:
-        ip_plus_netmask = re.findall(r"((?:(?:25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{2}|[0-9])(?:\.?|$)){4})", string)
+        ip_plus_netmask = re.findall(
+            r"((?:(?:25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{2}|[0-9])(?:\.?|$)){4})",
+            string
+        )
         if len(ip_plus_netmask) == 2:
             ip_addr = ip_plus_netmask[0]+'/'+ip_plus_netmask[1]
             res = IPv4Interface(ip_addr)
