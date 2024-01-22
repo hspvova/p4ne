@@ -25,9 +25,5 @@ for filename in glob.glob(r"..\..\..\config_files\*.log"):
             if tango:
                 result.append(tango)
 
-s_old = ""
-
-for s in sorted(result):
-    if s != s_old:
-        print(s)
-    s_old = s
+for s in set(result):
+    print(s)
