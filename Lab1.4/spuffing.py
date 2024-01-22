@@ -12,7 +12,7 @@ def key_sort(network):
 
 
 def gen_pool(i):
-    gen = [Spuffer() for i in range(i)]
+    gen = [Spuffer() for _ in range(i)]
     return sorted(gen, key=key_sort)
 
 
